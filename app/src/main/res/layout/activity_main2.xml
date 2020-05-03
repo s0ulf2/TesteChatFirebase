@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/backgroundnew"
+    tools:context=".Main2Activity">
+
+    <EditText
+        android:id="@+id/edit_UserName"
+        android:layout_width="379dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:background="@drawable/bg_edittext_rounded"
+        android:ems="10"
+        android:hint="@string/name"
+        android:inputType="text"
+        android:paddingLeft="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Id_Button_SelectPhoto" />
+
+    <EditText
+        android:id="@+id/edit_Mail"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/bg_edittext_rounded"
+        android:ems="10"
+        android:hint="@string/mail"
+        android:inputType="textEmailAddress"
+        android:paddingLeft="8dp"
+        app:layout_constraintEnd_toEndOf="@+id/edit_UserName"
+        app:layout_constraintStart_toStartOf="@+id/edit_UserName"
+        app:layout_constraintTop_toBottomOf="@+id/edit_UserName" />
+
+    <EditText
+        android:id="@+id/edit_Password"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/bg_edittext_rounded"
+        android:ems="10"
+        android:hint="@string/password"
+        android:inputType="textPassword"
+        android:paddingLeft="8dp"
+        app:layout_constraintEnd_toEndOf="@+id/edit_Mail"
+        app:layout_constraintStart_toStartOf="@+id/edit_Mail"
+        app:layout_constraintTop_toBottomOf="@+id/edit_Mail" />
+
+    <Button
+        android:id="@+id/button_Register"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:background="@drawable/bg_button_rounded"
+        android:text="@string/Register"
+        android:textColor="@android:color/white"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/edit_Password"
+        app:layout_constraintStart_toStartOf="@+id/edit_Password"
+        app:layout_constraintTop_toBottomOf="@+id/edit_Password" />
+
+    <Button
+        android:id="@+id/Id_Button_SelectPhoto"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:textColor="@android:color/white"
+        android:textStyle="italic"
+        android:background="@drawable/bg_button_photo_register"
+        android:text="Foto"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/img_photo"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        app:civ_border_width="2dp"
+        app:civ_border_color="@android:color/holo_green_dark"
+        app:layout_constraintBottom_toBottomOf="@+id/Id_Button_SelectPhoto"
+        app:layout_constraintEnd_toEndOf="@+id/Id_Button_SelectPhoto"
+        app:layout_constraintStart_toStartOf="@+id/Id_Button_SelectPhoto"
+        app:layout_constraintTop_toTopOf="@+id/Id_Button_SelectPhoto"
+        app:layout_constraintVertical_bias="0.0"
+        />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
