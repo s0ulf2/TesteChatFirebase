@@ -153,14 +153,20 @@ public class Main2Activity extends AppCompatActivity {
                                 String username = mEditUserName.getText().toString();//pega o nome do usuário
                                 String profileUrl = uri.toString();//perga a url da foto
 
-                                User user = new User(uid,username,profileUrl);//pega os objetos e instancia
+                                User user = new User(uid,username,profileUrl);//pega os objetos e instancia direto da activity user
                                 //referencia do cloud firestore
+
                                 FirebaseFirestore.getInstance().collection("users") // referencia de uma coleção
                                 .add(user)// coleção
                                 .addOnSuccessListener(new OnSuccessListener<DocumentReference>(){ // insere um novo usuário
+
                                     @Override
                                     public void onSuccess(DocumentReference documentReference) {
                                         Log.i("Teste",documentReference.getId());
+                                        Intent intent =  new Intent(Main2Activity.this,MessagesActivity.class);
+                                        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK); // Coloca a activity a abrir como a principal, não deixando voltar para a tela anterior , no caso
+                                        //a tela de cadastro
+                                        startActivity(intent);
                                     }
                                 })
                                         .addOnFailureListener(new OnFailureListener(){

@@ -6,5 +6,7 @@
     <string name="password">Digite seu password</string>
     <string name="name">Nome</string>
     <string name="Register">Cadastrar</string>
+    <string name="contacts">contacts</string>
+    <string name="logout">logout</string>
 
 </resources>
