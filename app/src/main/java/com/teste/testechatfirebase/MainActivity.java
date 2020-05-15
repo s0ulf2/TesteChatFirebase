@@ -61,6 +61,12 @@ public class MainActivity extends AppCompatActivity {
                             @Override
                             public void onComplete(@NonNull Task<AuthResult> task) {
                                Log.i("Teste",task.getResult().getUser().getUid());
+
+                                Intent intent =  new Intent(MainActivity.this,MessagesActivity.class);
+                                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK); // Coloca a activity a abrir como a principal, não deixando voltar para a tela anterior , no caso
+                                //a tela de cadastro
+                                startActivity(intent);
+
                             }
                         })
                         .addOnFailureListener(new OnFailureListener() {

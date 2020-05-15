@@ -36,6 +36,8 @@ public class MessagesActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item){// escuta eventos dentro do menu
         switch (item.getItemId()){
             case R.id.contacts:// verifica se os contatos foram acionados
+                Intent intent = new Intent(MessagesActivity.this,ContatosActivity.class);
+                startActivity(intent);
                 break;
             case R.id.logout: // verifica se o logout foi solicitado e informa o firebase , depois valida se ouve o logout
                 FirebaseAuth.getInstance().signOut();
