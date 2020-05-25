@@ -8,5 +8,7 @@
     <string name="Register">Cadastrar</string>
     <string name="contacts">contacts</string>
     <string name="logout">logout</string>
+    <string name="btn_chat">Enviar</string>
+    <string name="message">Digite a mensagem</string>
 
 </resources>
