@@ -157,18 +157,17 @@ public class Main2Activity extends AppCompatActivity {
                                 //referencia do cloud firestore
 
                                 FirebaseFirestore.getInstance().collection("users") // referencia de uma coleção
-                                .add(user)// coleção
-                                .addOnSuccessListener(new OnSuccessListener<DocumentReference>(){ // insere um novo usuário
-
-                                    @Override
-                                    public void onSuccess(DocumentReference documentReference) {
-                                        Log.i("Teste",documentReference.getId());
-                                        Intent intent =  new Intent(Main2Activity.this,MessagesActivity.class);
-                                        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK); // Coloca a activity a abrir como a principal, não deixando voltar para a tela anterior , no caso
-                                        //a tela de cadastro
-                                        startActivity(intent);
-                                    }
-                                })
+                                        .document(uid)// regista ID para cada usuário "antes era aleatório
+                                        .set(user)// coleção
+                                        .addOnSuccessListener(new OnSuccessListener<Void>() {
+                                            @Override
+                                            public void onSuccess(Void aVoid) {
+                                                Intent intent =  new Intent(Main2Activity.this,MessagesActivity.class);
+                                                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK); // Coloca a activity a abrir como a principal, não deixando voltar para a tela anterior , no caso
+                                                //a tela de cadastro
+                                                startActivity(intent);
+                                            }
+                                        })
                                         .addOnFailureListener(new OnFailureListener(){
                                             public void onFailure(@NonNull Exception e ){
                                                 Log.i("Teste", e.getMessage());
